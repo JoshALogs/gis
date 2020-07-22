@@ -4,12 +4,38 @@
 
 With the Calculate Field tool:
 
-```expression_name(!selected_field1!)```
+```expression_name(!selected_field!)```
 
 ```
 import re
-def expression_name(selected_field1):
-    match = re.search('\w+@.*?(?=,|\s|$)', selected_field1)
+def expression_name(selected_field):
+    match = re.search('\w+@.*?(?=,|\s|$)', selected_field)
     if match:
         return match.group()
+```
+
+## Split full names into first and last
+
+With the Calculate Field tool:
+
+First Name
+
+```expression_name(!first_name_field!)```
+
+```
+import re
+def expression_name(first_name_field):
+    div = first_name_field.split()  
+    return div[-1]
+```
+
+Last Name
+
+```expression_name(!last_name_field!)```
+
+```
+import re
+def expression_name(last_name_field):
+    div = last_name_field.split()  
+    return div[-1]
 ```
