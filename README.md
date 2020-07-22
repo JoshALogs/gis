@@ -2,7 +2,7 @@
 
 ## Extract emails from a field with multiple contact info strings
 
-In the Calculate Field Tool:
+With the Calculate Field tool:
 
 ```expression_name(!selected_field1!)```
 
