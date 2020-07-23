@@ -42,7 +42,7 @@ First Name
 import re
 def expression_name(first_name_field):
     div = first_name_field.split()  
-    return div[-1]
+    return div[0]
 ```
 
 Last Name
