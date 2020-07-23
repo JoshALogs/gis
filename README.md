@@ -1,5 +1,19 @@
 # Guides for GIS
 
+## Extract phone numbers from a field with multiple contact info strings
+
+With the Calculate Field tool:
+
+```expression_name(!selected_field!)```
+
+```
+import re
+def expression_name(selected_field):
+    match = re.search('(\d{3}[-\.\s]??\d{3}[-\.\s]??\d{4}|\(\d{3}\)\s*\d{3}[-\.\s]??\d{4}|\d{3}[-\.\s]??\d{4})', selected_field)
+    if match:
+        return match.group()
+```
+
 ## Extract emails from a field with multiple contact info strings
 
 With the Calculate Field tool:
