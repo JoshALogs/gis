@@ -39,3 +39,14 @@ def expression_name(last_name_field):
     div = last_name_field.split()  
     return div[-1]
 ```
+
+## Remove all but first and last name
+
+```expression_name(!Contact!)```
+
+```
+import re
+def expression_name(Contact):
+    div = Contact.split()  
+    return div[0] + " " + div[-1]
+```
