@@ -12,6 +12,7 @@ def expression_name(selected_field):
     match = re.search('(\d{3}[-\.\s]??\d{3}[-\.\s]??\d{4}|\(\d{3}\)\s*\d{3}[-\.\s]??\d{4}|\d{3}[-\.\s]??\d{4})', selected_field)
     if match:
         return match.group()
+# thank you, Auguste @ stackoverflow.com        
 ```
 
 ## Extract emails from a field with multiple contact info strings
@@ -26,6 +27,7 @@ def expression_name(selected_field):
     match = re.search('\w+@.*?(?=,|\s|$)', selected_field)
     if match:
         return match.group()
+# thank you, steveoh @ The Spatial Community                    
 ```
 
 ## Split full names into first and last
