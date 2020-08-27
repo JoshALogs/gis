@@ -67,6 +67,15 @@ def expression_name(Contact):
     return div[0] + " " + div[-1]
 ```
 
+## List and count all features in a map
+
+```
+for l in arcpy.mp.ArcGISProject("CURRENT").listMaps()[0].listLayers():
+    try:print (l.name, ": ", arcpy.management.GetCount(l))
+    except:pass
+# thank you, slibby @ The Spatial Community    
+```
+
 # Add-Ins
 
 ## Streetview
