@@ -1,5 +1,15 @@
 # Guides for GIS
 
+## Add "Enable Undo" toggle to tools/models
+
+1. Find the file `C:\Program Files\ArcGIS\Pro\Resources\ArcToolBox\Toolboxes\editsession.txt` and edit in a text editor.
+2. Add a new line at the bottom with `<yourtoolboxalias>.<yourtoolname>`.
+3. Save and close the file.
+4. Save and close Pro.
+5. Reopen Pro and open the tool to see the Undo toggle at the bottom next to the Run button.
+
+Thanks to Drew Flater @ GeoNet
+
 ## Extract phone numbers from a field with multiple contact info strings
 
 With the Calculate Field tool:
