@@ -86,6 +86,13 @@ for l in arcpy.mp.ArcGISProject("CURRENT").listMaps()[0].listLayers():
 # thank you, slibby @ The Spatial Community    
 ```
 
+## Convert String to Float
+
+```
+float(!STRING_FIELD!)
+# thank you, slibby @ The Spatial Community    
+```
+
 # Add-Ins
 
 ## Streetview
