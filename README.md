@@ -113,7 +113,25 @@ for field in fields:
                     any(x.islower() for x in row[0]) == True
                     row[0] = row[0].upper()
                     cursor.updateRow(row)
+                    
 Thank you Aaron @ GIS Stack Exchange
+```
+
+## Remove Leading/Trailing Spaces From All String Records
+
+```
+import arcpy
+
+fc = r'C:\temp\test.gdb\yourFC'
+
+fieldlist=[i.name for i in arcpy.ListFields(fc) if i.type=='String']
+
+with arcpy.da.UpdateCursor(fc,fieldlist) as cursor:
+    for row in cursor:
+        row=[i.strip() if i is not None else None for i in row]
+        cursor.updateRow(row)
+
+Thank you BERA @ GIS Stack Exchange
 ```
 
 # Add-Ins
