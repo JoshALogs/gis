@@ -93,6 +93,29 @@ float(!STRING_FIELD!)
 # thank you, slibby @ The Spatial Community    
 ```
 
+## Convert All String Records to Uppercase
+
+```
+import arcpy
+
+fc = r'C:\temp\test.gdb\yourFC'
+
+desc = arcpy.Describe(fc)
+fields = desc.fields
+
+for field in fields:
+    if field.Type == "String":
+        with arcpy.da.UpdateCursor(fc, str(field.name)) as cursor:
+            for row in cursor:
+                if row[0] == None:  # Check for "<Null>"
+                    continue
+                else:
+                    any(x.islower() for x in row[0]) == True
+                    row[0] = row[0].upper()
+                    cursor.updateRow(row)
+Thank you Aaron @ GIS Stack Exchange
+```
+
 # Add-Ins
 
 ## Streetview
